@@ -26,11 +26,15 @@ vObj = cv2.VideoCapture(vidFile)
 ## Determine frame in which plume first appears ################################
 for i in range(minFrames):
     ret, frame = vObj.read()
-    
+
+i = 1
 while (vObj.isOpened()):
     ret, frame = vObj.read();
-    cv2.imshow('Frame', frame)
-    key = cv2.waitKey(0)
+    #cv2.imshow('Frame', frame)
+    #key = cv2.waitKey(0)
+    frameFile = '/scratch/paulj/Whakaari/20240726Frames/' + str(i) + '.png'
+    cv2.imwrite(frameFile, frame)
+    i = i + 1
     """
     pause(0.00001);
     frame_h = get(handle(gcf),'JavaFrame');
