@@ -6,7 +6,8 @@ import cv2
 ## Input parameters ############################################################
 
 #Video file name
-vidFile = '/scratch/paulj/Whakaari/20240726/tekaha_20240725T1816-1920.mp4'
+#vidFile = '/scratch/paulj/Whakaari/20240726/tekaha_20240725T1816-1920.mp4'
+vidFile = '/home/paulj/Documents/VMG/Whakaari/videos/tekaha_20240725T1816-1920.mp4'
 
 #Interval between frames (s)
 int = 1
@@ -18,20 +19,25 @@ outFile = '/scratch/paulj/Whakaari/20240726/tekahaNightHeight.csv'
 outFile = '/scratch/paulj/Whakaari/20240726/tekahaDayHeight.csv'
 
 #Smallest number of frames at which plume might possibly appear
-minFrames = 1200
+minFrames = 1572
 
 ## Read in video ###############################################################
 vObj = cv2.VideoCapture(vidFile)
 
 ## Determine frame in which plume first appears ################################
 for i in range(minFrames):
+    print(i)
     ret, frame = vObj.read()
-    
-while (vObj.isOpened()):
-    ret, frame = vObj.read();
-    cv2.imshow('Frame', frame)
-    key = cv2.waitKey(0)
-    """
+
+#i = 1
+#while (vObj.isOpened()):
+#    ret, frame = vObj.read();
+    #cv2.imshow('Frame', frame)
+#    outFrame = '/scratch/paulj/Whakaari/20240726Frames/' + str(i) + '.png'
+#    print(outFrame)
+    #cv2.imwrite(outFrame, frame)
+#    i = i + 1
+"""
     pause(0.00001);
     frame_h = get(handle(gcf),'JavaFrame');
     set(frame_h,'Maximized',1);
